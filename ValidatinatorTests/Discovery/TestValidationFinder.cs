@@ -16,7 +16,7 @@ namespace ValidatinatorTests.Discovery
         [Validation]
         public static class StringValidation
         {
-            public static ValidationResult SurnameIsMandatory([Field("Customer.Surname")] string surname)
+            public static ValidationResult SurnameIsMandatory([Field("Customer.Surname", "match(Customer.Id)")] string surname)
             {
                 return ValidationResult.Valid;
             }

@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.705
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validatinator", "Validatinator\Validatinator.csproj", "{A6A2B1AF-9672-4CBE-829F-E8F674F3D35C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Validatinator", "Validatinator\Validatinator.csproj", "{A6A2B1AF-9672-4CBE-829F-E8F674F3D35C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidatinatorTests", "..\ValidatinatorTests\ValidatinatorTests.csproj", "{813F3F53-0B27-4FA9-93FE-EEF6AFC1A509}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidatinatorTests", "..\ValidatinatorTests\ValidatinatorTests.csproj", "{813F3F53-0B27-4FA9-93FE-EEF6AFC1A509}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AE5C75B6-0947-4ED2-B878-216299E26846}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

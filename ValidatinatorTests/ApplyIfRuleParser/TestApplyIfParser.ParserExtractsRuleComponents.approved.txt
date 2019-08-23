@@ -1,0 +1,145 @@
+Input                              Valid                                                                                             
+---------------------------------- -----                                                                                             
+FirstError                         True                                                                                              
+                                                                                                                                     
+    Error                                                                                                                            
+    -----                                                                                                                            
+                                                                                                                                     
+                                                                                                                                     
+    Result                                                                                                                           
+    ----------                                                                                                                       
+    FirstError                                                                                                                       
+                                                                                                                                     
+Input                              Valid                                                                                             
+---------------------------------- -----                                                                                             
+cleaninput                         True                                                                                              
+                                                                                                                                     
+    Error                                                                                                                            
+    -----                                                                                                                            
+                                                                                                                                     
+                                                                                                                                     
+    Result                                                                                                                           
+    ----------                                                                                                                       
+    CleanInput                                                                                                                       
+                                                                                                                                     
+Input                              Valid                                                                                             
+---------------------------------- -----                                                                                             
+match(a.b)                         True                                                                                              
+                                                                                                                                     
+    Error                                                                                                                            
+    -----                                                                                                                            
+                                                                                                                                     
+                                                                                                                                     
+    Result                                                                                                                           
+    ----------                                                                                                                       
+    Match(a.b)                                                                                                                       
+                                                                                                                                     
+Input                              Valid                                                                                             
+---------------------------------- -----                                                                                             
+match(a.b),match(b.c),firstError   True                                                                                              
+                                                                                                                                     
+    Error                                                                                                                            
+    -----                                                                                                                            
+                                                                                                                                     
+                                                                                                                                     
+    Result                                                                                                                           
+    --------------------------------                                                                                                 
+    Match(a.b),Match(b.c),FirstError                                                                                                 
+                                                                                                                                     
+Input                              Valid                                                                                             
+---------------------------------- -----                                                                                             
+match(a.b), match(b.c), firstError True                                                                                              
+                                                                                                                                     
+    Error                                                                                                                            
+    -----                                                                                                                            
+                                                                                                                                     
+                                                                                                                                     
+    Result                                                                                                                           
+    --------------------------------                                                                                                 
+    Match(a.b),Match(b.c),FirstError                                                                                                 
+                                                                                                                                     
+Input                              Valid                                                                                             
+---------------------------------- -----                                                                                             
+match(a.b)match(b.c)firstError     False                                                                                             
+                                                                                                                                     
+    Error                                                                                                                            
+    -----------------------------                                                                                                    
+    Unable to parse ApplyIf rule.                                                                                                    
+                                                                                                                                     
+    Result                                                                                                                           
+    ------------------------------------                                                                                             
+    Error(Unable to parse ApplyIf rule.)                                                                                             
+                                                                                                                                     
+Input                              Valid                                                                                             
+---------------------------------- -----                                                                                             
+match(a)                           False                                                                                             
+                                                                                                                                     
+    Error                                                                                                                            
+    -----------------------------                                                                                                    
+    Unable to parse ApplyIf rule.                                                                                                    
+                                                                                                                                     
+    Result                                                                                                                           
+    ------------------------------------                                                                                             
+    Error(Unable to parse ApplyIf rule.)                                                                                             
+                                                                                                                                     
+Input                              Valid                                                                                             
+---------------------------------- -----                                                                                             
+match(a                            False                                                                                             
+                                                                                                                                     
+    Error                                                                                                                            
+    -----------------------------                                                                                                    
+    Unable to parse ApplyIf rule.                                                                                                    
+                                                                                                                                     
+    Result                                                                                                                           
+    ------------------------------------                                                                                             
+    Error(Unable to parse ApplyIf rule.)                                                                                             
+                                                                                                                                     
+Input                              Valid                                                                                             
+---------------------------------- -----                                                                                             
+match(                             False                                                                                             
+                                                                                                                                     
+    Error                                                                                                                            
+    -----------------------------                                                                                                    
+    Unable to parse ApplyIf rule.                                                                                                    
+                                                                                                                                     
+    Result                                                                                                                           
+    ------------------------------------                                                                                             
+    Error(Unable to parse ApplyIf rule.)                                                                                             
+                                                                                                                                     
+Input                              Valid                                                                                             
+---------------------------------- -----                                                                                             
+match                              False                                                                                             
+                                                                                                                                     
+    Error                                                                                                                            
+    -----------------------------                                                                                                    
+    Unable to parse ApplyIf rule.                                                                                                    
+                                                                                                                                     
+    Result                                                                                                                           
+    ------------------------------------                                                                                             
+    Error(Unable to parse ApplyIf rule.)                                                                                             
+                                                                                                                                     
+Input                              Valid                                                                                             
+---------------------------------- -----                                                                                             
+wrong                              False                                                                                             
+                                                                                                                                     
+    Error                                                                                                                            
+    -----------------------------                                                                                                    
+    Unable to parse ApplyIf rule.                                                                                                    
+                                                                                                                                     
+    Result                                                                                                                           
+    ------------------------------------                                                                                             
+    Error(Unable to parse ApplyIf rule.)                                                                                             
+                                                                                                                                     
+Input                              Valid                                                                                             
+---------------------------------- -----                                                                                             
+a.b                                False                                                                                             
+                                                                                                                                     
+    Error                                                                                                                            
+    -----------------------------                                                                                                    
+    Unable to parse ApplyIf rule.                                                                                                    
+                                                                                                                                     
+    Result                                                                                                                           
+    ------------------------------------                                                                                             
+    Error(Unable to parse ApplyIf rule.)                                                                                             
+                                                                                                                                     
+                                                                                                                                     

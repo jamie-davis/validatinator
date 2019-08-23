@@ -1,0 +1,75 @@
+Input                                                                                          
+-------------------                                                                            
+firsterror                                                                                     
+                                                                                               
+      Token Type Text                                                                          
+    ------------ ----------                                                                    
+      FirstError firsterror                                                                    
+                                                                                               
+Input                                                                                          
+-------------------                                                                            
+FirstError                                                                                     
+                                                                                               
+      Token Type Text                                                                          
+    ------------ ----------                                                                    
+      FirstError firsterror                                                                    
+                                                                                               
+Input                                                                                          
+-------------------                                                                            
+cleaninput                                                                                     
+                                                                                               
+      Token Type Text                                                                          
+    ------------ ----------                                                                    
+      CleanInput cleaninput                                                                    
+                                                                                               
+Input                                                                                          
+-------------------                                                                            
+CleanInput                                                                                     
+                                                                                               
+      Token Type Text                                                                          
+    ------------ ----------                                                                    
+      CleanInput cleaninput                                                                    
+                                                                                               
+Input                                                                                          
+-------------------                                                                            
+identifier.another                                                                             
+                                                                                               
+      Token Type Text                                                                          
+    ------------ ----------                                                                    
+      Identifier identifier                                                                    
+          Period .                                                                             
+      Identifier another                                                                       
+                                                                                               
+Input                                                                                          
+-------------------                                                                            
+@error                                                                                         
+                                                                                               
+      Token Type Text                                                                          
+    ------------ ------                                                                        
+      Identifier @error                                                                        
+                                                                                               
+Input                                                                                          
+-------------------                                                                            
+match(entity.field)                                                                            
+                                                                                               
+      Token Type Text                                                                          
+    ------------ ------                                                                        
+           Match match                                                                         
+       OpenParen (                                                                             
+      Identifier entity                                                                        
+          Period .                                                                             
+      Identifier field                                                                         
+      CloseParen )                                                                             
+                                                                                               
+Input                                                                                          
+-------------------                                                                            
+Match,entity,                                                                                  
+                                                                                               
+      Token Type Text                                                                          
+    ------------ ------                                                                        
+           Match match                                                                         
+           Comma ,                                                                             
+      Identifier entity                                                                        
+           Comma ,                                                                             
+                                                                                               
+                                                                                               

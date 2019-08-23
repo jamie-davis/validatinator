@@ -1,4 +1,5 @@
 ﻿using System;
+using Validatinator.ApplyIfRuleParser;
 
 namespace Validatinator.Attributes
 {
@@ -7,9 +8,21 @@ namespace Validatinator.Attributes
     {
         public string FieldName { get; }
 
-        public FieldAttribute(string fieldName)
+        internal ApplyIfRule Rule {get;}
+
+        public FieldAttribute(string fieldName, string rule = null)
         {
             FieldName = fieldName;
+            if (rule != null)
+            {
+                Rule = ApplyIfParser.Parse(rule);
+                if (!Rule.Valid)
+                    throw new Exception($"{FieldName}: {ApplyIfParser.Parse(rule).Error} ({rule})");
+                if (Rule.RequireCleanInput || Rule.RequireFirstError)
+                {
+                    throw new Exception($"{FieldName}: Only match rules are allowed on fields. ({rule})");
+                }
+            }
         }
     }
 }

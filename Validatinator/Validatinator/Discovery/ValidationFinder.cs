@@ -6,7 +6,7 @@ using Validatinator.Attributes;
 
 namespace Validatinator.Discovery
 {
-    public static class ValidationFinder
+    internal static class ValidationFinder
     {
         public static IEnumerable<ValidationInfo> ScanAssembly(Assembly assembly, Func<Type, bool> func = null)
         {
