@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Validatinator.ApplyIfRuleParser
+namespace Validatinator.RuleParsing
 {
     static class ApplyIfParser
     {
         internal static ApplyIfRule Parse(string applyIfSpec)
         {
-            var tokens = ApplyIfLexer.Analyse(applyIfSpec ?? string.Empty);
+            var tokens = RuleLexer.Analyse(applyIfSpec ?? string.Empty);
             var firstErr = tokens.FirstOrDefault(t => t.TokenType == ApplyIfTokenType.Error);
             if (firstErr != null)
             {
@@ -25,7 +25,7 @@ namespace Validatinator.ApplyIfRuleParser
 
         private static ApplyIfRule PerformParse(IEnumerable<ApplyIfToken> tokens, out string error)
         {
-            var tokenKeeper = new ApplyIfTokenKeeper(tokens.ToList());
+            var tokenKeeper = new RuleTokenKeeper(tokens.ToList());
             if (tokenKeeper.Finished)
             {
                 error = null;
@@ -42,7 +42,7 @@ namespace Validatinator.ApplyIfRuleParser
             return new ApplyIfRule(clause);
         }
 
-        private static ApplyIfRuleClause TakeClause(ApplyIfTokenKeeper tokenKeeper)
+        private static ApplyIfRuleClause TakeClause(RuleTokenKeeper tokenKeeper)
         {
             ApplyIfRuleClause clause;
 
@@ -57,7 +57,7 @@ namespace Validatinator.ApplyIfRuleParser
 
         }
 
-        private static bool TryTakeRuleClause(ApplyIfTokenKeeper tokenKeeper, out ApplyIfRuleClause clause)
+        private static bool TryTakeRuleClause(RuleTokenKeeper tokenKeeper, out ApplyIfRuleClause clause)
         {
             if (TryTakeCleanInput(tokenKeeper, out clause)
                 || TryTakeFirstError(tokenKeeper, out clause)
@@ -70,9 +70,9 @@ namespace Validatinator.ApplyIfRuleParser
             return false;
         }
 
-        private static bool TryTakeRuleSequence(ApplyIfTokenKeeper tokenKeeper, out ApplyIfRuleClause clause)
+        private static bool TryTakeRuleSequence(RuleTokenKeeper tokenKeeper, out ApplyIfRuleClause clause)
         {
-            var work = new ApplyIfTokenKeeper(tokenKeeper);
+            var work = new RuleTokenKeeper(tokenKeeper);
             if (TryTakeRuleClause(work, out var left))
             {
                 if (work.Next.TokenType == ApplyIfTokenType.Comma)
@@ -95,35 +95,7 @@ namespace Validatinator.ApplyIfRuleParser
             return false;
         }
 
-        private static bool TryTakeEntityReference(ApplyIfTokenKeeper tokenKeeper, out EntityReference clause)
-        {
-            var next = tokenKeeper.Next;
-            if (next.TokenType == ApplyIfTokenType.Identifier)
-            {
-                var work = new ApplyIfTokenKeeper(tokenKeeper);
-                var entity = work.Take().Text;
-
-                if (work.Next.TokenType == ApplyIfTokenType.Period)
-                {
-                    work.Take();
-                    if (work.Next.TokenType == ApplyIfTokenType.Identifier)
-                    {
-                        var field = work.Take().Text;
-                        tokenKeeper.Swap(work);
-                        clause = new EntityReference(entity, field);
-                        return true;
-                    }
-                }
-
-                clause = null;
-                return false;
-            }
-
-            clause = null;
-            return false;
-        }
-
-        private static bool TryTakeCleanInput(ApplyIfTokenKeeper tokenKeeper, out ApplyIfRuleClause clause)
+        private static bool TryTakeCleanInput(RuleTokenKeeper tokenKeeper, out ApplyIfRuleClause clause)
         {
             var next = tokenKeeper.Next;
             if (next.TokenType == ApplyIfTokenType.CleanInput)
@@ -137,7 +109,7 @@ namespace Validatinator.ApplyIfRuleParser
             return false;
         }
 
-        private static bool TryTakeFirstError(ApplyIfTokenKeeper tokenKeeper, out ApplyIfRuleClause clause)
+        private static bool TryTakeFirstError(RuleTokenKeeper tokenKeeper, out ApplyIfRuleClause clause)
         {
             var next = tokenKeeper.Next;
             if (next.TokenType == ApplyIfTokenType.FirstError)
@@ -151,19 +123,19 @@ namespace Validatinator.ApplyIfRuleParser
             return false;
         }
 
-        private static bool TryTakeMatch(ApplyIfTokenKeeper tokenKeeper, out ApplyIfRuleClause clause)
+        private static bool TryTakeMatch(RuleTokenKeeper tokenKeeper, out ApplyIfRuleClause clause)
         {
             var next = tokenKeeper.Next;
             if (next.TokenType == ApplyIfTokenType.Match)
             {
-                var work = new ApplyIfTokenKeeper(tokenKeeper);
+                var work = new RuleTokenKeeper(tokenKeeper);
                 work.Take();
 
                 if (work.Next.TokenType == ApplyIfTokenType.OpenParen)
                 {
                     work.Take();
 
-                    if (TryTakeEntityReference(work, out var entityReference))
+                    if (EntityReferenceParser.TryTakeEntityReference(work, out var entityReference))
                     {
                         if (work.Next.TokenType == ApplyIfTokenType.CloseParen)
                             work.Take();

@@ -1,0 +1,61 @@
+Input      Valid                                                                                                                     
+---------- -----                                                                                                                     
+FirstError False                                                                                                                     
+                                                                                                                                     
+    Error                                                                                                                            
+    --------------------------------                                                                                                 
+    Unable to parse entity reference                                                                                                 
+                                                                                                                                     
+    Result                                                                                                                           
+    ------                                                                                                                           
+    NULL                                                                                                                             
+                                                                                                                                     
+Input      Valid                                                                                                                     
+---------- -----                                                                                                                     
+cleaninput False                                                                                                                     
+                                                                                                                                     
+    Error                                                                                                                            
+    --------------------------------                                                                                                 
+    Unable to parse entity reference                                                                                                 
+                                                                                                                                     
+    Result                                                                                                                           
+    ------                                                                                                                           
+    NULL                                                                                                                             
+                                                                                                                                     
+Input      Valid                                                                                                                     
+---------- -----                                                                                                                     
+a.b        True                                                                                                                      
+                                                                                                                                     
+    Error                                                                                                                            
+    -----                                                                                                                            
+                                                                                                                                     
+                                                                                                                                     
+    Result                                                                                                                           
+    ------                                                                                                                           
+    a.b                                                                                                                              
+                                                                                                                                     
+Input      Valid                                                                                                                     
+---------- -----                                                                                                                     
+a          False                                                                                                                     
+                                                                                                                                     
+    Error                                                                                                                            
+    --------------------------------                                                                                                 
+    Unable to parse entity reference                                                                                                 
+                                                                                                                                     
+    Result                                                                                                                           
+    ------                                                                                                                           
+    NULL                                                                                                                             
+                                                                                                                                     
+Input      Valid                                                                                                                     
+---------- -----                                                                                                                     
+match(a.b) False                                                                                                                     
+                                                                                                                                     
+    Error                                                                                                                            
+    --------------------------------                                                                                                 
+    Unable to parse entity reference                                                                                                 
+                                                                                                                                     
+    Result                                                                                                                           
+    ------                                                                                                                           
+    NULL                                                                                                                             
+                                                                                                                                     
+                                                                                                                                     

@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading;
 
 namespace Validatinator.Discovery
 {
-    internal class ValidationCatalog
+    internal class ValidationCatalog : IValidationCatalog
     {
         private List<ValidationInfo> _all = new List<ValidationInfo>();
         private Dictionary<string, List<ValidationInfo>> _validationsByField = new Dictionary<string, List<ValidationInfo>>();
 
-        public ValidationCatalog()
+        internal ValidationCatalog()
         {
             
         }
@@ -38,6 +34,11 @@ namespace Validatinator.Discovery
                 if (!validations.Contains(field.Validation))
                     validations.Add(field.Validation);
             }
+        }
+
+        IEnumerable<ValidationInfo> IValidationCatalog.Validations()
+        {
+            return _all.ToList();
         }
     }
 }

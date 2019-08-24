@@ -3,10 +3,10 @@ using FluentAssertions;
 using TestConsole.OutputFormatting;
 using TestConsoleLib;
 using TestConsoleLib.Testing;
-using Validatinator.ApplyIfRuleParser;
+using Validatinator.RuleParsing;
 using Xunit;
 
-namespace ValidatinatorTests.ApplyIfRuleParser
+namespace ValidatinatorTests.RuleParsing
 {
     public class TestApplyIfParser
     {

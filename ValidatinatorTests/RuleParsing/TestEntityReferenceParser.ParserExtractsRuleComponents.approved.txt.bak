@@ -1,0 +1,61 @@
+Input      Valid                                                                                                                     
+---------- -----                                                                                                                     
+FirstError False                                                                                                                     
+                                                                                                                                     
+    Error                                                                                                                            
+    -----                                                                                                                            
+                                                                                                                                     
+                                                                                                                                     
+    Result                                                                                                                           
+    ------                                                                                                                           
+    NULL                                                                                                                             
+                                                                                                                                     
+Input      Valid                                                                                                                     
+---------- -----                                                                                                                     
+cleaninput False                                                                                                                     
+                                                                                                                                     
+    Error                                                                                                                            
+    -----                                                                                                                            
+                                                                                                                                     
+                                                                                                                                     
+    Result                                                                                                                           
+    ------                                                                                                                           
+    NULL                                                                                                                             
+                                                                                                                                     
+Input      Valid                                                                                                                     
+---------- -----                                                                                                                     
+a.b        False                                                                                                                     
+                                                                                                                                     
+    Error                                                                                                                            
+    -----                                                                                                                            
+                                                                                                                                     
+                                                                                                                                     
+    Result                                                                                                                           
+    ------                                                                                                                           
+    NULL                                                                                                                             
+                                                                                                                                     
+Input      Valid                                                                                                                     
+---------- -----                                                                                                                     
+a          False                                                                                                                     
+                                                                                                                                     
+    Error                                                                                                                            
+    -----                                                                                                                            
+                                                                                                                                     
+                                                                                                                                     
+    Result                                                                                                                           
+    ------                                                                                                                           
+    NULL                                                                                                                             
+                                                                                                                                     
+Input      Valid                                                                                                                     
+---------- -----                                                                                                                     
+match(a.b) False                                                                                                                     
+                                                                                                                                     
+    Error                                                                                                                            
+    -----                                                                                                                            
+                                                                                                                                     
+                                                                                                                                     
+    Result                                                                                                                           
+    ------                                                                                                                           
+    NULL                                                                                                                             
+                                                                                                                                     
+                                                                                                                                     

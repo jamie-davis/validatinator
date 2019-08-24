@@ -1,26 +1,19 @@
 ﻿using System.Collections.Generic;
 
-namespace Validatinator.ApplyIfRuleParser
+namespace Validatinator.RuleParsing
 {
-    internal sealed class ApplyIfRuleErrorClause : ApplyIfRuleClause
+    internal class FirstErrorClause : ApplyIfRuleClause
     {
-        public string Error { get; }
-
-        public ApplyIfRuleErrorClause(string error)
-        {
-            Error = error;
-        }
-
         #region Overrides of ApplyIfRuleClause
 
         internal override string Describe()
         {
-            return $"Error({Error})";
+            return "FirstError";
         }
 
         internal override bool GetRequireFirstError()
         {
-            return false;
+            return true;
         }
 
         internal override bool GetRequireCleanInput()
@@ -32,7 +25,6 @@ namespace Validatinator.ApplyIfRuleParser
         {
             yield break;
         }
-
         #endregion
     }
 }

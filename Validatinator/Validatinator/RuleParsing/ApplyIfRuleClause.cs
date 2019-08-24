@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Validatinator.ApplyIfRuleParser
+namespace Validatinator.RuleParsing
 {
     internal abstract class ApplyIfRuleClause
     {

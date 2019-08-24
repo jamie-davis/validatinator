@@ -1,20 +1,20 @@
 ﻿using System.Collections.Generic;
 
-namespace Validatinator.ApplyIfRuleParser
+namespace Validatinator.RuleParsing
 {
-    internal class ApplyIfTokenKeeper
+    internal class RuleTokenKeeper
     {
         private List<ApplyIfToken> _tokens;
         private int _index;
         private static readonly ApplyIfToken Terminator = new ApplyIfToken(ApplyIfTokenType.Terminator, null);
 
-        public ApplyIfTokenKeeper(List<ApplyIfToken> tokens)
+        public RuleTokenKeeper(List<ApplyIfToken> tokens)
         {
             _tokens = tokens;
             _index = 0;
         }
 
-        public ApplyIfTokenKeeper(ApplyIfTokenKeeper tokenKeeper)
+        public RuleTokenKeeper(RuleTokenKeeper tokenKeeper)
         {
             _tokens = tokenKeeper._tokens;
             _index = tokenKeeper._index;
@@ -35,7 +35,7 @@ namespace Validatinator.ApplyIfRuleParser
             return next;
         }
 
-        public void Swap(ApplyIfTokenKeeper tokenKeeper)
+        public void Swap(RuleTokenKeeper tokenKeeper)
         {
             var oldTokens = _tokens;
             _tokens = tokenKeeper._tokens;

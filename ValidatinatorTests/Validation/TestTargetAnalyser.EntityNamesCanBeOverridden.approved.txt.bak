@@ -1,0 +1,6 @@
+Entity   Field     Type                                                                        
+-------- --------- ------                                                                      
+Customer Id        Int32                                                                       
+Customer FirstName String                                                                      
+Customer LastName   String                                                                      
+                                                                                               

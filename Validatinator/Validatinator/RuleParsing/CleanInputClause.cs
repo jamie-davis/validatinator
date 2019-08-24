@@ -1,24 +1,24 @@
 ﻿using System.Collections.Generic;
 
-namespace Validatinator.ApplyIfRuleParser
+namespace Validatinator.RuleParsing
 {
-    internal class FirstErrorClause : ApplyIfRuleClause
+    internal class CleanInputClause : ApplyIfRuleClause
     {
         #region Overrides of ApplyIfRuleClause
 
         internal override string Describe()
         {
-            return "FirstError";
+            return "CleanInput";
         }
 
         internal override bool GetRequireFirstError()
         {
-            return true;
+            return false;
         }
 
         internal override bool GetRequireCleanInput()
         {
-            return false;
+            return true;
         }
 
         internal override IEnumerable<EntityReference> GetMatches()

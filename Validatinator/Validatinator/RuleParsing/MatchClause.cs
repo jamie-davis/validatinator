@@ -1,14 +1,21 @@
 ﻿using System.Collections.Generic;
 
-namespace Validatinator.ApplyIfRuleParser
+namespace Validatinator.RuleParsing
 {
-    internal class CleanInputClause : ApplyIfRuleClause
+    internal class MatchClause : ApplyIfRuleClause
     {
+        public MatchClause(EntityReference entityReference)
+        {
+            EntityReference = entityReference;
+        }
+
+        internal EntityReference EntityReference { get; }
+
         #region Overrides of ApplyIfRuleClause
 
         internal override string Describe()
         {
-            return "CleanInput";
+            return $"Match({EntityReference.Describe()})";
         }
 
         internal override bool GetRequireFirstError()
@@ -18,13 +25,14 @@ namespace Validatinator.ApplyIfRuleParser
 
         internal override bool GetRequireCleanInput()
         {
-            return true;
+            return false;
         }
 
         internal override IEnumerable<EntityReference> GetMatches()
         {
-            yield break;
+            yield return EntityReference;
         }
+
         #endregion
     }
 }

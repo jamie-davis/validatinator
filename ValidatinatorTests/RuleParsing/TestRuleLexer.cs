@@ -2,12 +2,12 @@
 using TestConsole.OutputFormatting;
 using TestConsoleLib;
 using TestConsoleLib.Testing;
-using Validatinator.ApplyIfRuleParser;
+using Validatinator.RuleParsing;
 using Xunit;
 
-namespace ValidatinatorTests.ApplyIfRuleParser
+namespace ValidatinatorTests.RuleParsing
 {
-    public class TestApplyIfLexer
+    public class TestRuleLexer
     {
         private static readonly string[] TestStrings = 
         {
@@ -29,7 +29,7 @@ namespace ValidatinatorTests.ApplyIfRuleParser
 
             //Act
             var results = TestStrings
-                .Select(s => new { String = s, Result = ApplyIfLexer.Analyse(s).ToList() })
+                .Select(s => new { String = s, Result = RuleLexer.Analyse(s).ToList() })
                 .ToList();
 
             //Assert

@@ -1,4 +1,4 @@
-﻿namespace Validatinator.ApplyIfRuleParser
+﻿namespace Validatinator.RuleParsing
 {
     internal class ApplyIfToken
     {

@@ -2,9 +2,9 @@
 using System.Linq;
 using Validatinator.LexerUtilities;
 
-namespace Validatinator.ApplyIfRuleParser
+namespace Validatinator.RuleParsing
 {
-    internal static class ApplyIfLexer
+    internal static class RuleLexer
     {
         private static readonly Dictionary<string, ApplyIfToken> Tokens = new Dictionary<string, ApplyIfToken>
         {

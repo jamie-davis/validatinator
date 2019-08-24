@@ -1,5 +1,5 @@
 ﻿using System;
-using Validatinator.ApplyIfRuleParser;
+using Validatinator.RuleParsing;
 
 namespace Validatinator.Attributes
 {

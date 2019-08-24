@@ -1,21 +1,21 @@
 ﻿using System.Collections.Generic;
 
-namespace Validatinator.ApplyIfRuleParser
+namespace Validatinator.RuleParsing
 {
-    internal class MatchClause : ApplyIfRuleClause
+    internal sealed class ApplyIfRuleErrorClause : ApplyIfRuleClause
     {
-        public MatchClause(EntityReference entityReference)
-        {
-            EntityReference = entityReference;
-        }
+        public string Error { get; }
 
-        internal EntityReference EntityReference { get; }
+        public ApplyIfRuleErrorClause(string error)
+        {
+            Error = error;
+        }
 
         #region Overrides of ApplyIfRuleClause
 
         internal override string Describe()
         {
-            return $"Match({EntityReference.Describe()})";
+            return $"Error({Error})";
         }
 
         internal override bool GetRequireFirstError()
@@ -30,7 +30,7 @@ namespace Validatinator.ApplyIfRuleParser
 
         internal override IEnumerable<EntityReference> GetMatches()
         {
-            yield return EntityReference;
+            yield break;
         }
 
         #endregion
