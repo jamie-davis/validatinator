@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using Validatinator.Attributes;
+using Validatinator.RuleParsing;
 
 namespace Validatinator.Discovery
 {
@@ -8,11 +9,11 @@ namespace Validatinator.Discovery
     {
         public ValidationFieldInfo(FieldAttribute attrib, ParameterInfo parameter)
         {
-            Name = attrib.FieldName;
+            Name = attrib.EntityReference;
             Type = parameter.ParameterType;
         }
 
-        public string Name { get; }
+        public EntityReference Name { get; }
         public Type Type { get; }
     }
 }

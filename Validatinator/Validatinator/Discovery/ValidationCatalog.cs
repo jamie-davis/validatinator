@@ -25,10 +25,10 @@ namespace Validatinator.Discovery
             var fields = newValidations.SelectMany(v => v.Fields.Select(f => new { f.Name, Validation = v }));
             foreach (var field in fields)
             {
-                if (!_validationsByField.TryGetValue(field.Name, out var validations))
+                if (!_validationsByField.TryGetValue(field.Name.Describe(), out var validations))
                 {
                     validations = new List<ValidationInfo>();
-                    _validationsByField[field.Name] = validations;
+                    _validationsByField[field.Name.Describe()] = validations;
                 }
 
                 if (!validations.Contains(field.Validation))

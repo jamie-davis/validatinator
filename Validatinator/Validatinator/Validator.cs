@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using Validatinator.Validation;
 
 namespace Validatinator
 {
     public class Validator
     {
         private readonly IValidationCatalog _validations;
-        private List<object> _entities = new List<object>();
+        private readonly TargetSet _entities = new TargetSet();
 
         public Validator(IValidationCatalog validations)
         {
@@ -14,14 +14,12 @@ namespace Validatinator
 
         public void AddEntity(object entity)
         {
-            if (!_entities.Contains(entity))
-                _entities.Add(entity);
+            _entities.Add(entity);
         }
 
         public void RemoveEntity(object entity)
         {
-            if (_entities.Contains(entity))
-                _entities.Remove(entity);
+            _entities.Remove(entity);
         }
 
     }
