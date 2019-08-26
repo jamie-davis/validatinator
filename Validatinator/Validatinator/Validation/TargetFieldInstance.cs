@@ -4,11 +4,11 @@
     {
         public TargetFieldInstance(TargetFieldInfo targetFieldInfo, object target)
         {
-            this.targetFieldInfo = targetFieldInfo;
+            TargetFieldInfo = targetFieldInfo;
             Target = target;
         }
 
-        internal TargetFieldInfo targetFieldInfo { get; }
+        internal TargetFieldInfo TargetFieldInfo { get; }
         internal object Target { get; }
     }
 }
